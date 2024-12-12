@@ -144,8 +144,6 @@
     };
   };
 
-  services.sketchybar.enable = true;
-
   services.jankyborders = {
     enable = true;
     hidpi = true;

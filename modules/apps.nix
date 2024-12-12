@@ -76,11 +76,16 @@
 
     taps = [
       "homebrew/services"
+      "FelixKratz/formulae"
     ];
 
     # `brew install`
     # TODO Feel free to add your favorite apps here.
     brews = [
+      {
+        name = "sketchybar";
+        restart_service = true;
+      }
       "switchaudio-osx"
       "nowplaying-cli"
       "lua"
