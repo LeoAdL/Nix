@@ -110,6 +110,7 @@
 
   services.yabai = {
     enable = true;
+    enableScriptingAddition = true;
     config = {
       external_bar = "all:35:0";
       menubar_opacity = 0.5;
@@ -141,7 +142,16 @@
       mouse_action2 = "resize";
       mouse_drop_action = "swap";
     };
+  };
 
+  services.sketchybar.enable = true;
+
+  services.jankyborders = {
+    enable = true;
+    hidpi = true;
+    active_color = "0xFFF2CDCD";
+    inactive_color = "0xff494d64";
+    width = 5.0;
   };
 
   # Optimize storage

@@ -76,20 +76,11 @@
 
     taps = [
       "homebrew/services"
-      "FelixKratz/formulae"
     ];
 
     # `brew install`
     # TODO Feel free to add your favorite apps here.
     brews = [
-      {
-        name = "sketchybar";
-        restart_service = true;
-      }
-      {
-        name = "borders";
-        restart_service = true;
-      }
       "switchaudio-osx"
       "nowplaying-cli"
       "lua"
@@ -101,9 +92,6 @@
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
-      {
-        name = "karabiner-elements";
-      }
       "sf-symbols"
       "font-sf-pro"
       "font-sf-mono"
