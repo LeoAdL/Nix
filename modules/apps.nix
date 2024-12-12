@@ -76,19 +76,12 @@
 
     taps = [
       "homebrew/services"
-      "koekeishiya/formulae"
       "FelixKratz/formulae"
     ];
 
     # `brew install`
     # TODO Feel free to add your favorite apps here.
     brews = [
-      {
-        name = "yabai";
-      }
-      {
-        name = "skhd";
-      }
       {
         name = "sketchybar";
         restart_service = true;
