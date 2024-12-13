@@ -22,6 +22,7 @@
   environment.systemPackages = with pkgs; [
     git
     zstd
+    btop
     antidote
     neovim
     wezterm
@@ -51,10 +52,14 @@
     msmtp
     nil
     nixfmt-rfc-style
+    pass
 
     feishin
     element-desktop
     skimpdf
+    nowplaying-cli
+    coreutils
+    raycast
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
@@ -76,22 +81,13 @@
 
     taps = [
       "homebrew/services"
-      "FelixKratz/formulae"
     ];
 
     # `brew install`
     # TODO Feel free to add your favorite apps here.
     brews = [
-      {
-        name = "sketchybar";
-        restart_service = true;
-      }
       "switchaudio-osx"
-      "nowplaying-cli"
       "lua"
-      "coreutils"
-
-      # "aria2"  # download tool
     ];
 
     # `brew install --cask`
@@ -101,7 +97,6 @@
       "font-sf-pro"
       "font-sf-mono"
       "bitwarden"
-      "raycast"
       "jellyfin-media-player"
       # "google-chrome"
     ];

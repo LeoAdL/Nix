@@ -28,6 +28,7 @@
     };
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-darwin";
+    stylix.url = "github:danth/stylix";
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -35,41 +36,43 @@
   # parameters in `outputs` are defined in `inputs` and can be referenced by their names.
   # However, `self` is an exception, this special parameter points to the `outputs` itself (self-reference)
   # The `@` syntax here is used to alias the attribute set of the inputs's parameter, making it convenient to use inside the function.
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    darwin,
-    home-manager,
-    ...
-  }: let
-    # TODO replace with your own username, system and hostname
-    username = "leoap";
-    system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
-    hostname = "LeoAdl-M3";
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      darwin,
+      home-manager,
+      stylix,
+      ...
+    }:
+    let
+      # TODO replace with your own username, system and hostname
+      username = "leoap";
+      system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
+      hostname = "LeoAdl-M3";
 
-    specialArgs =
-      inputs
-      // {
+      specialArgs = inputs // {
         inherit username hostname;
       };
-  in {
-    darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
-      inherit system specialArgs;
-      modules = [
-        ./modules/nix-core.nix
-        ./modules/system.nix
-        ./modules/apps.nix
-        ./modules/host-users.nix
-        home-manager.darwinModules.home-manager
-        {
+    in
+    {
+      darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
+        inherit system specialArgs;
+        modules = [
+          ./modules/nix-core.nix
+          ./modules/system.nix
+          ./modules/apps.nix
+          ./modules/host-users.nix
+          stylix.darwinModules.stylix
+          ./modules/stylix.nix
+          home-manager.darwinModules.home-manager
+          {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.backupFileExtension="backup";
+            home-manager.backupFileExtension = "backup";
             home-manager.users.leoap = import ./home;
-        }
-      ];
+          }
+        ];
+      };
     };
-    # nix code formatter
-    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
-  };
 }
