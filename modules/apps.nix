@@ -93,6 +93,7 @@
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
+      "karabiner-elements"
       "sf-symbols"
       "font-sf-pro"
       "font-sf-mono"

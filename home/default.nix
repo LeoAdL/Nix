@@ -96,6 +96,12 @@
   };
   fonts.fontconfig = {
     enable = true;
+    defaultFonts = {
+      monospace = [ "Iosevka Nerd Font" ];
+      sansSerif = [ "Iosevka Nerd Font" ];
+      serif = [ "Lato" ];
+    };
+
   };
 
   programs.emacs = {
@@ -131,7 +137,8 @@
 
       osc = "no"; # 'no' required for MordernX OSC
       osd-bar = "yes"; # Do not remove/comment if mpv_thumbnail_script_client_osc.lua is being used.
-      osd-font = "Lato"; # Set a font for OSC
+      osd-font = "Iosevka Nerd Font"; # Set a font for OSC
+      osd-font-provider = "fontconfig";
       osd-font-size = 30; # Set a font size
       osd-color = "#CCFFFFFF"; # ARGB format
       osd-border-color = "#DD322640"; # ARGB format
