@@ -147,6 +147,12 @@
       mouse_action2 = "resize";
       mouse_drop_action = "swap";
     };
+    extraConfig = ''
+      yabai -m signal --add event=dock_did_restart action=" sudo yabai
+            - -load-sa "
+      sudo yabai --load-sa
+    '';
+
   };
 
   services.sketchybar = {
