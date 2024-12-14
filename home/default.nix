@@ -201,6 +201,39 @@
   programs.msmtp = {
     enable = true;
   };
-  stylix = {
+
+  programs.mu = {
+    enable = true;
+  };
+
+  accounts.email = {
+    maildirBasePath = ".local/share/mail";
+    accounts = {
+      "leoaparisi@gmail.com" = {
+        passwordCommand = "pass leoaparisi@gmail.com";
+        primary = true;
+        realName = "Leo Aparisi de Lannoy";
+        address = "leoaparisi@gmail.com";
+        flavor = "gmail.com";
+        imap.host = "imap.gmail.com";
+        imap.port = 993;
+        maildir.path = "leoaparisi@gmail.com";
+        folders = {
+          inbox = "INBOX";
+        };
+        mbsync = {
+          enable = true;
+          create = "both";
+          expunge = "both";
+          patterns = [ "*" ];
+        };
+        mu.enable = true;
+        msmtp.enable = true;
+        smtp = {
+          host = "smtp.gmail.com";
+          port = 465;
+        };
+      };
+    };
   };
 }
