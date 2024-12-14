@@ -33,6 +33,8 @@
       autohide = true;
       autohide-delay = 0.24;
     };
+    finder.AppleShowAllExtensions = true;
+
   };
   # Create /etc/zshrc that loads the nix-darwin environment.
   # this is required if you want to use darwin's default shell - zsh
@@ -148,8 +150,7 @@
       mouse_drop_action = "swap";
     };
     extraConfig = ''
-      yabai -m signal --add event=dock_did_restart action=" sudo yabai
-            - -load-sa "
+      yabai -m signal --add event=dock_did_restart action=" sudo yabai --load-sa "
       sudo yabai --load-sa
     '';
 
