@@ -29,6 +29,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-darwin";
     stylix.url = "github:danth/stylix";
+    pkgs-stable-darwin.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
+
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -54,6 +56,11 @@
       specialArgs = inputs // {
         inherit username hostname;
       };
+      stable = import pkgs-stable-darwin {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
     in
     {
       darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {

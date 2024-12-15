@@ -344,6 +344,7 @@
 
   programs.sioyek = {
     enable = true;
+    package = stable.sioyek
   };
 
   programs.zathura = {
