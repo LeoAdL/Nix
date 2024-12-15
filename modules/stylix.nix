@@ -17,12 +17,12 @@
 
       sansSerif = {
         package = pkgs.iosevka;
-        name = "Iosevka Sans";
+        name = "Iosevka";
       };
 
       monospace = {
         package = pkgs.iosevka;
-        name = "Iosevka Sans Mono";
+        name = "Iosevka Term";
       };
 
       emoji = {
