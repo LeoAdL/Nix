@@ -1,10 +1,26 @@
-
 { pkgs, ... }:
 
 {
+
+  nix.optimise = {
+    automatic = true;
+  };
+
+  nix.gc = {
+    automatic = true;
+    interval = {
+      Weekday = 0;
+      Hour = 2;
+      Minute = 0;
+    };
+    options = "--delete-older-than 10d";
+  };
   nix.settings = {
     # enable flakes globally
-    experimental-features = ["nix-command" "flakes"];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
     # substituers that will be considered before the official ones(https://cache.nixos.org)
     substituters = [

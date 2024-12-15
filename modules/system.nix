@@ -23,19 +23,22 @@
       NSGlobalDomain.AppleInterfaceStyle = "Dark";
       # other macOS's defaults configuration.
       # ......
+      dock = {
+        autohide = true;
+        autohide-delay = 0.24;
+      };
+      finder.AppleShowAllExtensions = true;
+      screencapture.type = "png";
+    };
+
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToControl = true;
     };
   };
 
   # Add ability to used TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
-  system.defaults = {
-    dock = {
-      autohide = true;
-      autohide-delay = 0.24;
-    };
-    finder.AppleShowAllExtensions = true;
-
-  };
   # Create /etc/zshrc that loads the nix-darwin environment.
   # this is required if you want to use darwin's default shell - zsh
   programs.zsh.enable = true;
