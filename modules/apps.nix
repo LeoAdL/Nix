@@ -22,37 +22,19 @@
   environment.systemPackages = with pkgs; [
     git
     zstd
-    btop
-    antidote
     neovim
-    wezterm
-    fzf
     dua
-    fd
     ffmpeg
-    khard
-    diff-so-fancy
-    lazygit
-    zathura
-    tmux
     tidal-dl
-    bat
-    eza
-    lesspipe
     brave
-    pandoc
-    ripgrep
     ripgrep-all
     wireguard-go
-    yazi
     iina
-    yt-dlp
-    syncthing
-    isync
-    msmtp
     nil
     nixfmt-rfc-style
+
     pass
+    neofetch
 
     feishin
     element-desktop

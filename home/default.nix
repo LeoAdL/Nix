@@ -246,6 +246,42 @@
       }
     '';
   };
+  programs.pandoc = {
+    enable = true;
+  };
+  programs.ripgrep = {
+    enable = true;
+  };
+  programs.yazi = {
+    enable = true;
+    enableZshIntegration = true;
+    plugins = {
+      Miller = pkgs.fetchFromGitHub {
+        owner = "Reledia";
+        repo = "miller.yazi";
+        rev = "40e0265";
+        sha256 = "GXZZ/vI52rSw573hoMmspnuzFoBXDLcA0fqjF76CdnY=";
+      };
+    };
+    settings = {
+      manager = {
+        ratio = [
+          0
+          4
+          3
+        ];
+      };
+      preview = {
+        image_delay = 0;
+      };
+      plugin = {
+        plugin_previewers = {
+          mime = "text/csv";
+          run = "miller";
+        };
+      };
+    };
+  };
 
   programs.mbsync = {
     enable = true;
@@ -289,4 +325,49 @@
       };
     };
   };
+
+  programs.htop = {
+    enable = true;
+  };
+
+  programs.fd = {
+    enable = true;
+  };
+
+  programs.git.diff-so-fancy = {
+    enable = true;
+  };
+
+  programs.lazygit = {
+    enable = true;
+  };
+
+  programs.sioyek = {
+    enable = true;
+  };
+
+  programs.zathura = {
+    enable = true;
+  };
+
+  programs.tmux = {
+    enable = true;
+  };
+
+  programs.eza = {
+    enable = true;
+  };
+
+  programs.lesspipe = {
+    enable = true;
+  };
+
+  programs.yt-dlp = {
+    enable = true;
+  };
+
+  services.syncthing = {
+    enable = true;
+  };
+
 }
