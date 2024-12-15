@@ -80,6 +80,7 @@
       "font-sf-mono"
       "bitwarden"
       "jellyfin-media-player"
+
       # "google-chrome"
     ];
   };

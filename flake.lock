@@ -247,7 +247,24 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-darwin": "nixpkgs-darwin",
+        "stable-darwin": "stable-darwin",
         "stylix": "stylix"
+      }
+    },
+    "stable-darwin": {
+      "locked": {
+        "lastModified": 1734097745,
+        "narHash": "sha256-ZDN1ytl6Xur0EhJqUtqa0/j686Hy155p3IAW+8yeyS0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e84c1eb11ad40943c40db09436195c48f0dcfb57",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-24.05-darwin",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "stylix": {

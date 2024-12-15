@@ -20,6 +20,7 @@
   # This is the standard format for flake.nix. `inputs` are the dependencies of the flake,
   # Each item in `inputs` will be passed as a parameter to the `outputs` function after being pulled and built.
   inputs = {
+    stable-darwin.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
     darwin = {
@@ -29,7 +30,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-darwin";
     stylix.url = "github:danth/stylix";
-    pkgs-stable-darwin.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
 
   };
 
@@ -45,6 +45,7 @@
       darwin,
       home-manager,
       stylix,
+      stable-darwin,
       ...
     }:
     let
@@ -56,11 +57,10 @@
       specialArgs = inputs // {
         inherit username hostname;
       };
-      stable = import pkgs-stable-darwin {
+      stable = import stable-darwin {
         inherit system;
         config.allowUnfree = true;
       };
-
     in
     {
       darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
@@ -76,6 +76,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit stable; };
             home-manager.backupFileExtension = "backup";
             home-manager.users.leoap = import ./home;
           }

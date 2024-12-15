@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  stable,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -344,7 +349,7 @@
 
   programs.sioyek = {
     enable = true;
-    package = stable.sioyek
+    package = stable.sioyek;
   };
 
   programs.zathura = {
