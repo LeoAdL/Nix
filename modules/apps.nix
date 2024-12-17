@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, stable, ... }:
 {
 
   ##########################################################################
@@ -42,6 +42,7 @@
     nowplaying-cli
     coreutils
     raycast
+    stable.jellyfin-mpv-shim
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
