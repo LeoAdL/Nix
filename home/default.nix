@@ -173,7 +173,12 @@
       vo = "gpu-next";
       gpu-context = "macvk";
       macos-render-timer = "precise";
-      hwdec = "auto-copy-safe"; # enable hardware decoding, defaults to 'no'
+      hwdec = "yes"; # enable hardware decoding, defaults to 'no'
+
+      hdr-compute-peak = "yes";
+      allow-delayed-peak-detect = "yes";
+      tone-mapping = "bt.2446a";
+      target-prim = "apple";
 
       ###### Debanding
       deband = "yes";
