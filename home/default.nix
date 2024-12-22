@@ -141,7 +141,7 @@
       ###########
 
       osc = "no"; # 'no' required for MordernX OSC
-      osd-bar = "yes"; # Do not remove/comment if mpv_thumbnail_script_client_osc.lua is being used.
+      osd-bar = "no"; # Do not remove/comment if mpv_thumbnail_script_client_osc.lua is being used.
       osd-font = "Iosevka Nerd Font"; # Set a font for OSC
       osd-font-provider = "fontconfig";
       osd-font-size = 30; # Set a font size
@@ -173,12 +173,12 @@
       vo = "gpu-next";
       gpu-context = "macvk";
       macos-render-timer = "precise";
-      hwdec = "yes"; # enable hardware decoding, defaults to 'no'
+      hwdec = "videotoolbox"; # enable hardware decoding, defaults to 'no'
 
-      hdr-compute-peak = "yes";
-      allow-delayed-peak-detect = "yes";
-      tone-mapping = "bt.2446a";
-      target-prim = "apple";
+      hdr-peak-percentile = 99.995;
+      hdr-contrast-recovery = 0.30;
+      tone-mapping = "st2094-40";
+      allow-delayed-peak-detect = "no";
 
       ###### Debanding
       deband = "yes";
@@ -192,6 +192,15 @@
       thumbfast
       modernz
     ];
+    scriptOpts = {
+      thumbfast = {
+        hwdec = "no";
+        network = "yes";
+      };
+      modernz = {
+        info_button = "yes";
+      };
+    };
   };
 
   programs.bat = {
