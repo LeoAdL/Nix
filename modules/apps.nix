@@ -71,6 +71,7 @@
     brews = [
       "switchaudio-osx"
       "lua"
+      "ltex-ls"
     ];
 
     # `brew install --cask`

@@ -54,12 +54,12 @@
       system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
       hostname = "LeoAdl-M3";
 
-      specialArgs = inputs // {
-        inherit username hostname;
-      };
       stable = import stable-darwin {
         inherit system;
         config.allowUnfree = true;
+      };
+      specialArgs = inputs // {
+        inherit username hostname stable;
       };
     in
     {
