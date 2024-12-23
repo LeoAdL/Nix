@@ -161,6 +161,13 @@
 
   services.sketchybar = {
     enable = true;
+    config = '''';
+    extraPackages = with pkgs; [
+      jq
+      lua5_4
+      nowplaying-cli
+    ];
+
   };
 
   services.jankyborders = {

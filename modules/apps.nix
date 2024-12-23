@@ -39,7 +39,6 @@
     feishin
     element-desktop
     skimpdf
-    nowplaying-cli
     coreutils
     raycast
 
@@ -70,8 +69,9 @@
     # TODO Feel free to add your favorite apps here.
     brews = [
       "switchaudio-osx"
-      "lua"
       "ltex-ls"
+      "tcl-tk"
+      "pyenv"
     ];
 
     # `brew install --cask`
