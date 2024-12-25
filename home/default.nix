@@ -28,6 +28,9 @@
     enable = true;
     userName = "Leo Aparisi de Lannoy";
     userEmail = "laparisidelannoy@uchicago.edu";
+    diff-so-fancy = {
+      enable = true;
+    };
   };
 
   programs.fzf =
@@ -189,14 +192,10 @@
 
     };
     scripts = with pkgs.mpvScripts; [
-      thumbfast
+      # thumbfast
       modernz
     ];
     scriptOpts = {
-      thumbfast = {
-        hwdec = "no";
-        network = "yes";
-      };
       modernz = {
         info_button = "yes";
       };
@@ -353,14 +352,6 @@
     enable = true;
   };
 
-  programs.git.diff-so-fancy = {
-    enable = true;
-  };
-
-  programs.lazygit = {
-    enable = true;
-  };
-
   programs.sioyek = {
     enable = true;
     package = stable.sioyek;
@@ -382,12 +373,39 @@
     enable = true;
   };
 
+  services.gpg-agent = {
+    enable = true;
+    enableSshSupport = true;
+    defaultCacheTtlSsh = 36000000;
+    pinentryPackage = pkgs.pinentry_mac;
+    extraConfig = ''
+      allow-preset-passphrase
+      pinentry-timeout 36000000
+    '';
+  };
+
   programs.yt-dlp = {
     enable = true;
   };
 
   services.syncthing = {
     enable = true;
+  };
+
+  programs.chromium = {
+    enable = true;
+    package = pkgs.brave;
+    extensions = [
+      { id = "egehpkpgpgooebopjihjmnpejnjafefi"; } # better history
+      { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden
+      { id = "cofdbpoegempjloogbagkncekinflcnj"; } # deepl
+      { id = "lcfdefmogcogicollfebhgjiiakbjdje"; } # disable ext
+      { id = "phaodiidhofhdmfkjiacigibgikhfafn"; } # qudelix
+      { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # sponsorblock
+      { id = "ekhagklcjbdpajgpjgmbionohlpdbjgc"; } # zotero
+      { id = "kglhbbefdnlheedjiejgomgmfplipfeb"; } # jitsi
+      { id = "mafpmfcccpbjnhfhjnllmmalhifmlcie"; } # snowflake
+    ];
   };
 
 }

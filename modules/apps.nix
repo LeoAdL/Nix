@@ -26,7 +26,6 @@
     dua
     ffmpeg
     tidal-dl
-    brave
     ripgrep-all
     wireguard-go
     iina
@@ -42,6 +41,8 @@
     coreutils
     raycast
 
+    restic
+    rsync
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
@@ -56,11 +57,15 @@
     enable = true;
 
     onActivation = {
-      autoUpdate = false;
+      autoUpdate = true;
       # 'zap': uninstalls all formulae(and related files) not listed here.
-      # cleanup = "zap";
+      cleanup = "zap";
+
     };
 
+    masApps = {
+      Bitwarden = 1352778147;
+    };
     taps = [
       "homebrew/services"
     ];
@@ -80,7 +85,6 @@
       "sf-symbols"
       "font-sf-pro"
       "font-sf-mono"
-      "bitwarden"
       "jellyfin-media-player"
       "tidal"
 
