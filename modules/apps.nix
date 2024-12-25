@@ -43,6 +43,7 @@
 
     restic
     rsync
+    lua5_4
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka

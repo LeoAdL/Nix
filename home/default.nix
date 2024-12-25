@@ -115,13 +115,12 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-macport; # replace with pkgs.emacs-gtk, or a version provided by the community overlay if desired.
-    extraPackages =
-      epkgs: with epkgs; [
-        mu4e
-        vterm
-        jinx
-        pdf-tools
-      ];
+    extraPackages = epkgs: [
+      epkgs.mu4e
+      epkgs.vterm
+      epkgs.jinx
+      epkgs.pdf-tools
+    ];
   };
 
   programs.mpv = {
