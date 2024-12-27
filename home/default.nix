@@ -266,6 +266,10 @@
   programs.pandoc = {
     enable = true;
   };
+
+  programs.matplotlib = {
+    enable = true;
+  };
   programs.ripgrep = {
     enable = true;
   };
@@ -354,6 +358,23 @@
   programs.sioyek = {
     enable = true;
     package = stable.sioyek;
+    bindings = {
+      "move_up" = "k";
+      "move_down" = "j";
+      "move_left" = "h";
+      "move_right" = "l";
+      "screen_down" = [
+        "d"
+        "<C-d>"
+      ];
+      "screen_up" = [
+        "u"
+        "<C-u>"
+      ];
+    };
+  };
+  programs.texlive = {
+    enable = true;
   };
 
   programs.zathura = {

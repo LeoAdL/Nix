@@ -37,13 +37,18 @@
 
     feishin
     element-desktop
-    skimpdf
     coreutils
+
+    # MacOS
+    skimpdf
     raycast
 
     restic
     rsync
-    lua5_4
+    qbittorrent
+    rclone
+
+    vale
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
