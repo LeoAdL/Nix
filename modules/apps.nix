@@ -93,6 +93,7 @@
       "font-sf-mono"
       "jellyfin-media-player"
       "tidal"
+      "ghostty"
 
       # "google-chrome"
     ];
