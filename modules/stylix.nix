@@ -21,7 +21,7 @@
       };
 
       monospace = {
-        package = pkgs.iosevka;
+        package = pkgs.nerd-fonts.iosevka-term;
         name = "Iosevka Term";
       };
 
