@@ -65,6 +65,8 @@
     initExtra = ''
 
       source ~/.p10k.zsh
+      eval "$(/usr/libexec/path_helper)"
+      export PATH=/Library/TeX/texbin/:$PATH
 
     '';
     antidote = {
