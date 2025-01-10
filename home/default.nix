@@ -164,6 +164,7 @@
       #########
 
       ao = "coreaudio";
+      coreaudio-change-physical-format = "yes";
       audio-file-auto = "fuzzy"; # external audio doesn't has to match the file name exactly to autoload
 
       # Languages #
@@ -374,9 +375,6 @@
         "<C-u>"
       ];
     };
-  };
-  programs.texlive = {
-    enable = true;
   };
 
   programs.zathura = {
