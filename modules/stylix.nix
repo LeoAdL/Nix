@@ -21,8 +21,8 @@
       };
 
       monospace = {
-        package = pkgs.nerd-fonts.iosevka-term;
-        name = "Iosevka Term";
+        package = pkgs.iosevka;
+        name = "Iosevka";
       };
 
       emoji = {
