@@ -47,8 +47,11 @@
     rsync
     qbittorrent
     rclone
+    hugo
+    go
 
     vale
+    imagemagick
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
@@ -94,6 +97,7 @@
       "jellyfin-media-player"
       "tidal"
       "ghostty"
+      "mactex-no-gui"
 
       # "google-chrome"
     ];
