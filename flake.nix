@@ -20,6 +20,7 @@
   # This is the standard format for flake.nix. `inputs` are the dependencies of the flake,
   # Each item in `inputs` will be passed as a parameter to the `outputs` function after being pulled and built.
   inputs = {
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     stable-darwin.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
@@ -43,6 +44,7 @@
       self,
       nixpkgs,
       darwin,
+      nixpkgs-master,
       home-manager,
       stylix,
       stable-darwin,
@@ -55,6 +57,10 @@
       hostname = "LeoAdl-M3";
 
       stable = import stable-darwin {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      master = import nixpkgs-master {
         inherit system;
         config.allowUnfree = true;
       };

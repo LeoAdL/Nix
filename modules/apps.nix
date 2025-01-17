@@ -1,4 +1,9 @@
-{ pkgs, stable, ... }:
+{
+  pkgs,
+  stable,
+  master,
+  ...
+}:
 {
 
   ##########################################################################
@@ -21,6 +26,7 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     git
+    master.vvenc
     zstd
     neovim
     dua
