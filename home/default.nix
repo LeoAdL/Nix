@@ -193,6 +193,9 @@
       interpolation = "yes";
 
     };
+    bindings = {
+      "r" = "playlist-shuffle";
+    };
     scripts = with pkgs.mpvScripts; [
       # thumbfast
       modernz
