@@ -1,7 +1,6 @@
 {
   pkgs,
   stable,
-  master,
   ...
 }:
 {
@@ -24,9 +23,21 @@
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   nixpkgs.config.allowUnfree = true;
+  # nixpkgs.overlays = [
+  #   (self: super: {
+  #     vvenc = super.vvenc.overrideAttrs (previousAttrs: {
+  #       src = pkgs.fetchFromGitHub {
+  #         owner = "fraunhoferhhi";
+  #         repo = "vvenc";
+  #         rev = "c305325e7a7e22f337f3abd03e43508a42ae87b7";
+  #         sha256 = "sha256-Et/JmF/2hh6A1EsOzvgzruMN47rd5cPgRke3uPvz298=";
+  #       };
+  #     });
+  #   })
+  # ];
+
   environment.systemPackages = with pkgs; [
     git
-    master.vvenc
     zstd
     neovim
     dua
@@ -34,24 +45,17 @@
     tidal-dl
     ripgrep-all
     wireguard-go
-    iina
     nil
     nixfmt-rfc-style
 
+    # feishin
     pass
     neofetch
 
-    feishin
-    element-desktop
     coreutils
-
-    # MacOS
-    skimpdf
-    raycast
 
     restic
     rsync
-    qbittorrent
     rclone
     hugo
     go
@@ -104,8 +108,12 @@
       "tidal"
       "ghostty"
       "mactex-no-gui"
-
-      # "google-chrome"
+      "hammerspoon"
+      "skim"
+      "raycast"
+      "element"
+      "brave-browser"
+      "qbittorrent"
     ];
   };
 }
