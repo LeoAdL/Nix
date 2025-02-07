@@ -219,9 +219,9 @@
       local gpus = wezterm.gui.enumerate_gpus()
       return {
           font = wezterm.font_with_fallback({
-              "Iosevka Nerd Font",
+              "Iosevka",
           }),
-          font_size = 16.0,
+          font_size = 18.0,
           color_scheme = "Catppuccin Mocha",
           tab_bar_at_bottom = true,
           hide_tab_bar_if_only_one_tab = true,
@@ -232,7 +232,7 @@
               saturation = 0.9,
               brightness = 0.6,
           },
-          leader = { key = "b", mods = "CTRL" },
+          leader = { key = "a", mods = "CTRL" },
           keys = {
               { key = "a", mods = "LEADER|CTRL",  action = wezterm.action { SendString = "\x01" } },
               { key = "s", mods = "LEADER",       action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
