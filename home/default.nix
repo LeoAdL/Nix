@@ -63,11 +63,9 @@
   programs.zsh = {
     enable = true;
     initExtra = ''
-
       source ~/.p10k.zsh
       eval "$(/usr/libexec/path_helper)"
-      export PATH=/Library/TeX/texbin/:$PATH
-
+      export PATH="$PATH:/Library/TeX/texbin/"
     '';
     antidote = {
       enable = true;
@@ -117,12 +115,14 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-macport; # replace with pkgs.emacs-gtk, or a version provided by the community overlay if desired.
-    extraPackages = epkgs: [
-      epkgs.mu4e
-      epkgs.vterm
-      epkgs.jinx
-      epkgs.pdf-tools
-    ];
+    extraPackages =
+      epkgs: with epkgs; [
+        mu4e
+        vterm
+        jinx
+        pdf-tools
+        treesit-grammars.with-all-grammars
+      ];
   };
 
   programs.mpv = {
