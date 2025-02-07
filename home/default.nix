@@ -197,7 +197,7 @@
       "r" = "playlist-shuffle";
     };
     scripts = with pkgs.mpvScripts; [
-      # thumbfast
+      thumbfast
       modernz
     ];
     scriptOpts = {
