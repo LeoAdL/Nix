@@ -50,6 +50,7 @@
 
     # feishin
     pass
+    kitty
     neofetch
 
     coreutils
@@ -93,9 +94,11 @@
     # TODO Feel free to add your favorite apps here.
     brews = [
       "switchaudio-osx"
-      "ltex-ls"
+      "ltex-ls-plus"
       "tcl-tk"
       "pyenv"
+      "gpg"
+      "npm"
     ];
 
     # `brew install --cask`
