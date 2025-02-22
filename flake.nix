@@ -78,7 +78,7 @@
           ./modules/stylix.nix
           home-manager.darwinModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
+            home-manager.useGlobalPkgs = false;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit stable; };
             home-manager.backupFileExtension = "backup";
