@@ -11,8 +11,8 @@
     polarity = "dark";
     fonts = {
       serif = {
-        package = pkgs.lato;
-        name = "Lato";
+        package = pkgs.ibm-plex;
+        name = "IBM Plex";
       };
 
       sansSerif = {
