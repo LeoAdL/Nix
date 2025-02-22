@@ -85,6 +85,7 @@
 
     masApps = {
       Bitwarden = 1352778147;
+      Wireguard = 1451685025;
     };
     taps = [
       "homebrew/services"
@@ -99,6 +100,7 @@
       "pyenv"
       "gpg"
       "npm"
+      "mas"
     ];
 
     # `brew install --cask`
