@@ -139,6 +139,7 @@
       screenshot-png-compression = 4; # Range is 0 to 10. 0 being no compression.
       screenshot-tag-colorspace = "yes";
       screenshot-high-bit-depth = "yes"; # Same output bitdepth as the video
+      fs = "yes";
 
       ###########
       # OSC/OSD #
@@ -146,7 +147,7 @@
 
       osc = "no"; # 'no' required for MordernX OSC
       osd-bar = "no"; # Do not remove/comment if mpv_thumbnail_script_client_osc.lua is being used.
-      osd-font = "Iosevka Nerd Font"; # Set a font for OSC
+      osd-font = "IBM Plex Sans"; # Set a font for OSC
       osd-font-provider = "fontconfig";
       osd-font-size = 30; # Set a font size
       osd-color = "#CCFFFFFF"; # ARGB format
@@ -157,13 +158,14 @@
       osd-bar-w = 60; # width of " " "
 
       sub-auto = "fuzzy"; # external subs don't have to match the file name exactly to autoload
+      sub-font = "Lato";
       # sub-gauss=0.6					# Some settings fixing VOB/PGS subtitles (creating blur & changing yellow subs to gray)
 
       #########
       # Audio #
       #########
 
-      ao = "coreaudio";
+      # ao = "coreaudio";
       coreaudio-change-physical-format = "yes";
       audio-file-auto = "fuzzy"; # external audio doesn't has to match the file name exactly to autoload
 
