@@ -108,7 +108,6 @@
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
-      "sf-symbols"
       "font-sf-pro"
       "font-sf-mono"
       "jellyfin-media-player"
