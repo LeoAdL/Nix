@@ -44,6 +44,8 @@
     ffmpeg
     tidal-dl
     ripgrep-all
+    wget
+    (aspellWithDicts (dicts: with dicts; [ en en-computers en-science fr es]))
     wireguard-go
     nil
     nixfmt-rfc-style
