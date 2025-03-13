@@ -42,10 +42,23 @@
     neovim
     dua
     ffmpeg
+    poppler
+    ffmpegthumbnailer
+    mediainfo
+    vips
+    imagemagick
     tidal-dl
     ripgrep-all
     wget
-    (aspellWithDicts (dicts: with dicts; [ en en-computers en-science fr es]))
+    (aspellWithDicts (
+      dicts: with dicts; [
+        en
+        en-computers
+        en-science
+        fr
+        es
+      ]
+    ))
     wireguard-go
     nil
     nixfmt-rfc-style
@@ -64,7 +77,6 @@
     go
 
     vale
-    imagemagick
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
@@ -103,6 +115,7 @@
       "gpg"
       "npm"
       "mas"
+      "coreutils"
     ];
 
     # `brew install --cask`
