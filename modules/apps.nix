@@ -80,6 +80,8 @@
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
+    iosevka
+    ibm-plex
     lato
   ];
 
@@ -121,8 +123,6 @@
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
-      "font-sf-pro"
-      "font-sf-mono"
       "jellyfin-media-player"
       "tidal"
       "ghostty"
