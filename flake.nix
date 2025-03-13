@@ -27,9 +27,9 @@
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
+    # stylix.url = "github:danth/stylix";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-darwin";
-    stylix.url = "github:danth/stylix";
 
   };
 
@@ -44,8 +44,8 @@
       nixpkgs,
       darwin,
       home-manager,
-      stylix,
       stable-darwin,
+      # stylix,
       ...
     }:
     let
@@ -70,13 +70,13 @@
       darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
         inherit system specialArgs;
         modules = [
+          home-manager.darwinModules.home-manager
           ./modules/nix-core.nix
           ./modules/system.nix
           ./modules/apps.nix
           ./modules/host-users.nix
-          stylix.darwinModules.stylix
-          ./modules/stylix.nix
-          home-manager.darwinModules.home-manager
+          # stylix.darwinModules.stylix
+          # ./modules/stylix.nix
           {
             home-manager.useGlobalPkgs = false;
             home-manager.useUserPackages = true;
