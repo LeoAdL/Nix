@@ -214,7 +214,7 @@
       ###### Interpolation
       video-sync = "display-resample";
       interpolation = "yes";
-
+      save-position-on-quit = "yes";
     };
     bindings = {
       "r" = "playlist-shuffle";
