@@ -81,6 +81,7 @@
 
     vale
     texlab
+    ghostscript
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
@@ -122,6 +123,7 @@
       "npm"
       "mas"
       "coreutils"
+      "latexindent"
     ];
 
     # `brew install --cask`
