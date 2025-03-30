@@ -76,6 +76,9 @@
     hugo
     go
 
+    python3
+    uv
+
     vale
     texlab
   ];
