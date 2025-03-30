@@ -97,7 +97,7 @@
       autoUpdate = true;
       # 'zap': uninstalls all formulae(and related files) not listed here.
       cleanup = "zap";
-
+      upgrade = true;
     };
 
     masApps = {
