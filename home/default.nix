@@ -409,6 +409,129 @@
 
   programs.tmux = {
     enable = true;
+    clock24 = true;
+    baseIndex = 1;
+    historyLimit = 50000;
+    keyMode = "vi";
+    mouse = true;
+    plugins = with pkgs; [
+      {
+        plugin = tmuxPlugins.resurrect;
+        extraConfig = "";
+      }
+      {
+        plugin = tmuxPlugins.yank;
+      }
+      {
+        plugin = tmuxPlugins.continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '15'
+        '';
+      }
+      {
+        plugin = tmuxPlugins.tmux-fzf;
+        extraConfig = ''
+          set -g @t-fzf-prompt '  '
+          set -g @continuum-save-interval '15'
+          set -g @fzf-goto-session s
+          TMUX_FZF_LAUNCH_KEY="f"
+          TMUX_FZF_OPTIONS="-p -w 62% -h 38% -m"
+          set -g @fzf-goto-win-width 140
+          set -g @fzf-goto-win-height 20
+        '';
+      }
+      {
+        plugin = tmuxPlugins.fuzzback;
+        extraConfig = ''
+          set -g @fuzzback-popup 1
+          set -g @fuzzback-bind S
+        '';
+      }
+      {
+        plugin = tmuxPlugins.catppuccin;
+        extraConfig = ''
+              set -g @catppuccin_powerline_icons_theme_enabled on
+              set -g @catppuccin_window_status_style "rounded"
+          # Window
+          set -g @catppuccin_window_current_text "#{window_name}"
+          set -g @catppuccin_window_text "#{window_name}"
+        '';
+      }
+    ];
+    prefix = "C-a";
+    shortcut = "a";
+    terminal = "tmux-256color";
+
+    extraConfig = ''
+      set -ag terminal-overrides ",xterm-256color:RGB"
+
+      setw -g xterm-keys on
+      set -s escape-time 10                     # faster command sequences
+      set -sg repeat-time 600                   # increase repeat timeout
+
+      setw -q -g utf8 on
+
+      set -g set-clipboard on
+
+      set -g pane-base-index 1     # make pane numbering consistent with windows
+
+      set -g automatic-rename on   # rename window to reflect current program
+
+      set -g renumber-windows on    # renumber windows when a window is closed
+
+      set -g set-titles on          # set terminal title
+
+      set -g display-panes-time 800 # slightly longer pane indicators display time
+
+      # Increase tmux messages display duration from 750ms to 4s
+      set -g display-time 4000
+
+      # Refresh 'status-left' and 'status-right' more often, from every 15s to 5s
+      set -g status-interval 5
+
+      # Focus events enabled for terminals that support them
+      set -g focus-events on
+
+      # Super useful when using "grouped sessions" and multi-monitor setup
+      set -g aggressive-resize on
+
+      set -g monitor-activity on
+      set -g visual-activity off
+      # remap prefix from 'C-b' to 'C-a'
+      # remap prefix from 'C-b' to 'C-a'
+
+      # Smart pane switching with awareness of Vim splits.
+      # See: https://github.com/christoomey/vim-tmux-navigator
+
+      # use vim-like keys for splits and windows
+      bind v split-window -h
+      bind h split-window -v
+
+      unbind x               # unbind-key “x” from it’s current job of “ask and then close”
+      bind x kill-pane       # rebind-key it to just “close”
+      bind X kill-session    # key combo for killing the entire session - <prefix> + shift + x
+      set -g detach-on-destroy off  # don't exit from tmux when closing a session
+
+      unbind n  #DEFAULT KEY: Move to next window
+      unbind w  #DEFAULT KEY: change current window interactively
+
+      bind n command-prompt "rename-session '%%'"
+      bind w new-window -c "#{pane_current_path}"
+
+      unbind -T copy-mode-vi Space; #Default for begin-selection
+      unbind -T copy-mode-vi Enter; #Default for copy-selection
+
+      bind -T copy-mode-vi v send-keys -X begin-selection
+      bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xsel --clipboard"
+      set -g status-right-length 100
+      set -g status-left-length 100
+      set -g status-left ""
+      set -g status-right ""
+      set-option -g status-left ""
+      set -gq allow-passthrough on
+    '';
+
   };
 
   programs.eza = {
