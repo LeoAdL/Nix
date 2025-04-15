@@ -67,6 +67,7 @@
       eval "$(/usr/libexec/path_helper)"
       export PATH="$PATH:/Library/TeX/texbin/"
       alias python3="python"
+      alias rsync="/run/current-system/sw/bin/rsync"
       source "$HOME/.config/nix/default/bin/activate"
     '';
     antidote = {
@@ -448,7 +449,6 @@
       {
         plugin = tmuxPlugins.tmux-fzf;
         extraConfig = ''
-          set -g @t-fzf-prompt '  '
           set -g @continuum-save-interval '15'
           set -g @fzf-goto-session s
           TMUX_FZF_LAUNCH_KEY="f"
@@ -467,8 +467,8 @@
       {
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''
-              set -g @catppuccin_powerline_icons_theme_enabled on
-              set -g @catppuccin_window_status_style "rounded"
+          set -g @catppuccin_powerline_icons_theme_enabled on
+          set -g @catppuccin_window_status_style "rounded"
           # Window
           set -g @catppuccin_window_current_text "#{window_name}"
           set -g @catppuccin_window_text "#{window_name}"
@@ -486,8 +486,6 @@
       set -s escape-time 10                     # faster command sequences
       set -sg repeat-time 600                   # increase repeat timeout
 
-      setw -q -g utf8 on
-
       set -g set-clipboard on
 
       set -g pane-base-index 1     # make pane numbering consistent with windows
@@ -497,6 +495,8 @@
       set -g renumber-windows on    # renumber windows when a window is closed
 
       set -g set-titles on          # set terminal title
+      set -g set-titles-string "#T"
+
 
       set -g display-panes-time 800 # slightly longer pane indicators display time
 
@@ -514,13 +514,7 @@
 
       set -g monitor-activity on
       set -g visual-activity off
-      # remap prefix from 'C-b' to 'C-a'
-      # remap prefix from 'C-b' to 'C-a'
 
-      # Smart pane switching with awareness of Vim splits.
-      # See: https://github.com/christoomey/vim-tmux-navigator
-
-      # use vim-like keys for splits and windows
       bind v split-window -h
       bind h split-window -v
 
@@ -534,6 +528,7 @@
 
       bind n command-prompt "rename-session '%%'"
       bind w new-window -c "#{pane_current_path}"
+      bind W choose-window
 
       unbind -T copy-mode-vi Space; #Default for begin-selection
       unbind -T copy-mode-vi Enter; #Default for copy-selection
