@@ -41,12 +41,13 @@
     zstd
     neovim
     dua
-    ffmpeg
     poppler
+    poppler-utils
+    ffmpeg
     ffmpegthumbnailer
+    imagemagick
     mediainfo
     vips
-    imagemagick
     tidal-dl
     ripgrep-all
     wget
@@ -59,7 +60,6 @@
         es
       ]
     ))
-    wireguard-go
     nil
     nixfmt-rfc-style
 
