@@ -28,7 +28,7 @@
     enable = true;
     userName = "Leo Aparisi de Lannoy";
     userEmail = "laparisidelannoy@uchicago.edu";
-    diff-so-fancy = {
+    delta = {
       enable = true;
     };
   };
@@ -232,6 +232,17 @@
 
   programs.bat = {
     enable = true;
+    themes = {
+      catppuccin-mocha = {
+        src = pkgs.fetchFromGitHub {
+          owner = "catppuccin";
+          repo = "bat"; # Bat uses sublime syntax for its themes
+          rev = "699f60fc8ec434574ca7451b444b880430319941";
+          sha256 = "6fWoCH90IGumAMc4buLRWL0N61op+AuMNN9CAR9/OdI=";
+        };
+        file = "Catppuccin Mocha.tmTheme";
+      };
+    };
   };
 
   programs.wezterm = {
@@ -329,6 +340,11 @@
           mime = "text/csv";
           run = "miller";
         };
+      };
+    };
+    theme = {
+      flavor = {
+        dark = "catppuccin-mocha";
       };
     };
   };
@@ -576,5 +592,15 @@
       { id = "mafpmfcccpbjnhfhjnllmmalhifmlcie"; } # snowflake
     ];
   };
-
+programs.lazygit={
+    enable = true;
+    settings = {
+git = {
+  paging = {
+    colorArg= "always";
+    pager= "delta --dark --paging=never";
+  };
+};
+        };
+    };
 }
