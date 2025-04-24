@@ -583,15 +583,15 @@
       { id = "mafpmfcccpbjnhfhjnllmmalhifmlcie"; } # snowflake
     ];
   };
-programs.lazygit={
+  programs.lazygit = {
     enable = true;
     settings = {
-git = {
-  paging = {
-    colorArg= "always";
-    pager= "delta --dark --paging=never";
-  };
-};
+      git = {
+        paging = {
+          colorArg = "always";
+          pager = "delta --dark --paging=never";
         };
+      };
     };
+  };
 }
