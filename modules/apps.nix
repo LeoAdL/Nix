@@ -139,6 +139,7 @@
       "element"
       "brave-browser"
       "qbittorrent"
+      "syncthing"
     ];
   };
 }
