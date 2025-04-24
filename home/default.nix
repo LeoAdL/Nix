@@ -568,10 +568,6 @@
     enable = true;
   };
 
-  services.syncthing = {
-    enable = true;
-  };
-
   programs.chromium = {
     enable = true;
     package = pkgs.brave;
