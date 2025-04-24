@@ -62,7 +62,7 @@
 
   programs.zsh = {
     enable = true;
-    initExtra = ''
+    initContent = ''
       source ~/.p10k.zsh
       eval "$(/usr/libexec/path_helper)"
       export PATH="$PATH:/Library/TeX/texbin/"
