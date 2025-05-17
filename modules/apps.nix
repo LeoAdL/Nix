@@ -130,6 +130,7 @@
     # TODO Feel free to add your favorite apps here.
     casks = [
       "jellyfin-media-player"
+      "flameshot"
       "tidal"
       "ghostty"
       "mactex-no-gui"
@@ -140,6 +141,7 @@
       "brave-browser"
       "qbittorrent"
       "syncthing"
+      "omnissa-horizon-client"
     ];
   };
 }
