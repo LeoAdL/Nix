@@ -557,7 +557,7 @@
     enable = true;
     enableSshSupport = true;
     defaultCacheTtlSsh = 36000000;
-    pinentryPackage = pkgs.pinentry_mac;
+    pinentry.package = pkgs.pinentry_mac;
     extraConfig = ''
       allow-preset-passphrase
       pinentry-timeout 36000000
