@@ -62,13 +62,13 @@
 
   programs.zsh = {
     enable = true;
+    enableCompletion = false;
+    enableVteIntegration = false;
     initContent = ''
       source ~/.p10k.zsh
-      eval "$(/usr/libexec/path_helper)"
       export PATH="$PATH:/Library/TeX/texbin/"
       alias python3="python"
       alias rsync="/run/current-system/sw/bin/rsync"
-      source "$HOME/.config/nix/default/bin/activate"
     '';
     antidote = {
       enable = true;
@@ -99,8 +99,8 @@
         "wfxr/forgit"
         "Aloxaf/fzf-tab"
         "mattmc3/zfunctions"
-        "zsh-users/zsh-autosuggestions"
         "zdharma-continuum/fast-syntax-highlighting kind:defer"
+        "zsh-users/zsh-autosuggestions kind:defer"
 
       ];
     };
