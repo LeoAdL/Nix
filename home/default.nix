@@ -27,7 +27,7 @@
   programs.git = {
     enable = true;
     userName = "Leo Aparisi de Lannoy";
-    userEmail = "laparisidelannoy@uchicago.edu";
+    userEmail = "leoaparisi@gmail.com";
     delta = {
       enable = true;
     };
