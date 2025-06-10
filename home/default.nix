@@ -110,7 +110,7 @@
     defaultFonts = {
       monospace = [ "Iosevka Nerd Font" ];
       sansSerif = [ "Iosevka Nerd Font" ];
-      serif = [ "Lato" ];
+      serif = [ "IBM Plex Serif" ];
     };
 
   };
@@ -568,21 +568,21 @@
     enable = true;
   };
 
-  programs.chromium = {
-    enable = true;
-    package = pkgs.brave;
-    extensions = [
-      { id = "egehpkpgpgooebopjihjmnpejnjafefi"; } # better history
-      { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden
-      { id = "cofdbpoegempjloogbagkncekinflcnj"; } # deepl
-      { id = "lcfdefmogcogicollfebhgjiiakbjdje"; } # disable ext
-      { id = "phaodiidhofhdmfkjiacigibgikhfafn"; } # qudelix
-      { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # sponsorblock
-      { id = "ekhagklcjbdpajgpjgmbionohlpdbjgc"; } # zotero
-      { id = "kglhbbefdnlheedjiejgomgmfplipfeb"; } # jitsi
-      { id = "mafpmfcccpbjnhfhjnllmmalhifmlcie"; } # snowflake
-    ];
-  };
+  # programs.chromium = {
+  #   enable = true;
+  #   package = pkgs.brave;
+  #   extensions = [
+  #     { id = "egehpkpgpgooebopjihjmnpejnjafefi"; } # better history
+  #     { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden
+  #     { id = "cofdbpoegempjloogbagkncekinflcnj"; } # deepl
+  #     { id = "lcfdefmogcogicollfebhgjiiakbjdje"; } # disable ext
+  #     { id = "phaodiidhofhdmfkjiacigibgikhfafn"; } # qudelix
+  #     { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # sponsorblock
+  #     { id = "ekhagklcjbdpajgpjgmbionohlpdbjgc"; } # zotero
+  #     { id = "kglhbbefdnlheedjiejgomgmfplipfeb"; } # jitsi
+  #     { id = "mafpmfcccpbjnhfhjnllmmalhifmlcie"; } # snowflake
+  #   ];
+  # };
   programs.lazygit = {
     enable = true;
     settings = {

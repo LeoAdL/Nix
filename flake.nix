@@ -27,7 +27,7 @@
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
-    # stylix.url = "github:danth/stylix";
+    stylix.url = "github:danth/stylix";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-darwin";
 
@@ -45,7 +45,7 @@
       darwin,
       home-manager,
       stable-darwin,
-      # stylix,
+      stylix,
       ...
     }:
     let
@@ -75,14 +75,19 @@
           ./modules/system.nix
           ./modules/apps.nix
           ./modules/host-users.nix
-          # stylix.darwinModules.stylix
-          # ./modules/stylix.nix
+          stylix.darwinModules.stylix
+          ./modules/stylix.nix
           {
             home-manager.useGlobalPkgs = false;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit stable; };
             home-manager.backupFileExtension = "backup";
             home-manager.users.leoap = import ./home;
+              home-manager.sharedModules = [ 
+                {
+                  stylix.enableReleaseChecks = false;
+                }
+              ];
           }
         ];
       };

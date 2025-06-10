@@ -65,11 +65,12 @@
 
     # feishin
     pass
+    tcl-9_0
+    gnupg
+    coreutils
+    mas
     kitty
     neofetch
-
-    coreutils
-
     restic
     rsync
     rclone
@@ -79,6 +80,7 @@
     python3
     uv
 
+    ltex-ls-plus
     vale
     texlab
     ghostscript
@@ -116,14 +118,11 @@
     # TODO Feel free to add your favorite apps here.
     brews = [
       "switchaudio-osx"
-      "ltex-ls-plus"
-      "tcl-tk"
       "pyenv"
-      "gpg"
       "npm"
-      "mas"
-      "coreutils"
       "latexindent"
+      "poppler"
+      "coreutils"
     ];
 
     # `brew install --cask`
