@@ -70,7 +70,6 @@
     coreutils
     mas
     kitty
-    neofetch
     restic
     rsync
     rclone
@@ -141,6 +140,7 @@
       "qbittorrent"
       "syncthing"
       "omnissa-horizon-client"
+      "Zotero"
     ];
   };
 }
