@@ -138,7 +138,7 @@
       "element"
       "brave-browser"
       "qbittorrent"
-      "syncthing"
+      "syncthing-app"
       "omnissa-horizon-client"
       "Zotero"
     ];
